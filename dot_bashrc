@@ -1,0 +1,66 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+export TERM=xterm-256color
+export PAGER=bat
+export VISUAL=nvim
+export EDITOR=nvim
+
+alias vim='nvim'
+alias vi='nvim'
+
+alias ls='eza --color=auto'
+alias la='eza -Ah --color=auto'
+alias ll='eza -lh --color=auto'
+alias l='eza -lAh --color=auto'
+
+#alias find='fd'
+
+alias ps='procs'
+
+alias cat='bat'
+
+alias cd='z'
+
+alias du='dust'
+
+alias bc='eva'
+
+# Replace grep with ripgrep
+alias grep='rg --color=auto'
+alias grep='rg --color=auto'
+
+alias h='history'
+alias gh='history|grep'
+
+alias q='exit'
+alias c='clear'
+
+# Forces tmux to assume the terminal supports 256 colors
+#alias tmux='tmux -2'
+alias t='tmux'
+
+alias cta='cat'
+alias gerp='grep'
+alias sl='ls'
+
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+# Not supported in the "fish" shell.
+
+#(cat ~/.cache/wal/sequences &)
+
+
+# Use Starship prompt
+eval "$(starship init bash)"
+
+# Use zoxide as replacement for cd
+eval "$(zoxide init bash)"
+
+# Fetch system info
+pfetch | lolcat
